@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="mmover:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mmover_jar</output-path>
+    <root id="archive" name="mmover.jar">
+      <element id="module-output" name="mmover" />
+    </root>
+  </artifact>
+</component>
