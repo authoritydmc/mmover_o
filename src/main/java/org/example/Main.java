@@ -2,6 +2,7 @@ package org.example;
 
 import java.awt.*;
 import java.io.*;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -19,6 +20,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException, AWTException, FileNotFoundException {
+        long startTime=System.currentTimeMillis();
         PrintWriter logWriter=new PrintWriter(new File("mmover.log"));
         Properties prop = new Properties();
         try {
@@ -74,11 +76,15 @@ public class Main {
                     System.out.println("User has interfered " + MAX_INTERFERENCE_ALLOWED + " times exiting ");
                     Thread.sleep(3000);
                    logWriter.println("Closing the program @ "+getTime());
-                    LocalTime startTime = LocalTime.parse(formattedTime);
-                    LocalTime endTime = LocalTime.parse(getTime());
-                    LocalTime totalTime = LocalTime.MIN.plusSeconds(startTime.toSecondOfDay() - endTime.toSecondOfDay());
-                    logWriter.println("Total time program ran for: " + totalTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss a");
 
+                    long endTime = System.currentTimeMillis();
+                    long totalTimeInMillis = endTime - startTime;
+                    Duration duration = Duration.ofMillis(totalTimeInMillis);
+                    long hours = duration.toHours();
+                    long minutes = duration.toMinutes() % 60;
+                    long seconds = duration.getSeconds() % 60;
+                    logWriter.println("Total time program ran for: " + String.format("%02d:%02d:%02d", hours, minutes, seconds));
 
                     logWriter.close();
 

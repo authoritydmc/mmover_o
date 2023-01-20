@@ -1,0 +1,15 @@
+Started  on: 17:15:21 PM
+will move every 2 seconds 
+config values: waiting_time: 2000 MAX_X: 200 MAX_Y: 200 MAX_INTERFERENCE_ALLOWED: 3
+moved  1 times, current  location: (880,184)  17:15:21 PM
+moved  3 times, current  location: (15,3)  17:15:23 PM
+Corner, moving it to the middle of screen...
+moved  5 times, current  location: (683,384)  17:15:25 PM
+Warning !! User interfered 1 max:3
+moved  7 times, current  location: (531,344)  17:15:27 PM
+Warning !! User interfered 2 max:3
+moved  9 times, current  location: (658,230)  17:15:29 PM
+Warning !! User interfered 3 max:3
+User has interfered 3 times exiting 
+Closing the program @ 17:15:35 PM
+Total time program ran for: 00:00:13
